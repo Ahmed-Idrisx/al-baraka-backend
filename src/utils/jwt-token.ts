@@ -3,12 +3,12 @@ import { env } from "../config/env.js";
 
 const JWT_SECRET = env.JWT_SECRET;
 
-export function generateToken(userId: string) {
+export function generateToken() {
   if (!JWT_SECRET) {
     throw new Error("JWT_SECRET is not defined");
   }
 
-  return jwt.sign({ userId }, JWT_SECRET, {
+  return jwt.sign({ role: "ADMIN" }, JWT_SECRET, {
     expiresIn: "7d",
   });
 }

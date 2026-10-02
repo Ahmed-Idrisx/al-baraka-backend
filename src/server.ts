@@ -9,7 +9,7 @@ const startServer = async () => {
     await connectDB();
 
     const server = app.listen(env.PORT, () => {
-      console.log(`al-baraka running on port ${env.PORT}`);
+      console.log(`al-baraka server running on port ${env.PORT}`);
     });
 
     // Handle unhandled promise rejections
